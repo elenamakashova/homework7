@@ -33,7 +33,7 @@ public class Main {
             start++;
         }
         System.out.println ();
-        for (int i = 10; i >= 1; i = i - 1) {
+        for (int i = 10; i >= 1; i--) {
             System.out.print (i + " ");
         }
         System.out.println ();
@@ -45,9 +45,9 @@ public class Main {
         int population = 12000000;
         int bithPerYear = 17;
         int mortalityPerYear = 8;
-        int populationGrowth = (bithPerYear - mortalityPerYear) * 1000;
+        int populationGrowth = bithPerYear - mortalityPerYear;
         for (int i = 1; i <= 10; i++) {
-            population = population + populationGrowth;
+            population = population + ((population / 1000) * populationGrowth);
             System.out.println ("Год " + i + ": численность населения составляет " + population);
         }
         System.out.println ();
@@ -56,10 +56,10 @@ public class Main {
     public static void task4 () {
         System.out.println("Задача 4");
         int money = 15000;
-        float total = 0;
+        double total = 0;
         int i = 1;
         for (; total <= 12000000; i++) {
-            total = (float) (total + total*0.07);
+            total = total + total * 0.07;
             total = total + money;
             System.out.println ("Месяц " + i + ": сумма накоплений составляет " + total);
         }
@@ -70,10 +70,10 @@ public class Main {
     public static void task5 () {
         System.out.println("Задача 5");
         int money = 15000;
-        float total = 0;
+        double total = 0;
         int i = 1;
         for (; total <= 12000000; i++) {
-            total = (float) (total + total * 0.07);
+            total = total + total * 0.07;
             total = total + money;
             if (i % 6 == 0) {
                 System.out.println("Месяц " + i + ": сумма накоплений составляет " + total);
@@ -86,10 +86,10 @@ public class Main {
     public static void task6 () {
         System.out.println("Задача 6");
         int money = 15000;
-        float total = 0;
+        double total = 0;
         int i = 1;
         for (; i <= 108; i++) {
-            total = (float) (total + total * 0.07);
+            total = total + total * 0.07;
             total = total + money;
             if (i % 6 == 0) {
                 System.out.println("Месяц " + i + ": сумма накоплений составляет " + total);
